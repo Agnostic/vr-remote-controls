@@ -73,8 +73,6 @@ window.addEventListener('keyup', function(e) {
       e.which === 68) {
     moveY = 0;
   }
-  moveX = 0;
-  moveY = 0;
 
   socket.emit('keyup', { which: e.which, keyIdentifier: e.keyIdentifier });
 }, false);

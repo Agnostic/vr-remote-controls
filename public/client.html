@@ -2,18 +2,19 @@
   <head>
     <title>Remote Controller for Web Based Mobile Games</title>
     <link rel="stylesheet" href="css/app.css"/>
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/js/lib/jquery-1.11.0.min.js"></script>
+    <script src="/js/lib/three.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
   </head>
   <body>
     <header>
-      <h1>Remote controller client</h1>
+      <h1>Remote controller - Client</h1>
     </header>
     <div class="container">
-      <div class="console-title">Console</div>
-      <div id="console">
-      </div>
+      <div class="canvas-container"></div>
+      <div id="console"></div>
     </div>
+    <footer>Remote controller by <a href="http://github.com/Agnostic" target="_blank">Gilberto Avalos</a></footer>
     <script type="text/javascript" src="js/app-client.js"></script>
   </body>
 </html>
