@@ -6,6 +6,7 @@
 'use strict';
 
 var express = require('express'),
+  port = 3001,
   http = require('http'),
   app = express(),
   fs = require('fs'),
@@ -27,7 +28,7 @@ app.get('/vr-controller.js', function(req, res) {
 });
 
 // Initialize server
-var server = http.createServer(app).listen(3001);
+var server = http.createServer(app).listen(port);
 var sockets = io.listen(server);
 
 // Websocket events
@@ -51,3 +52,8 @@ sockets.on('connection', function(socket) {
   ping();
 
 });
+
+if (server._connectionKey) {
+  console.log(':: vr-remote controller is up and running ::');
+  console.log(':: Access to: http://127.0.0.1:' + port + '/');
+}
