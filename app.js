@@ -1,3 +1,8 @@
+/**
+* vr-remote controller for Three.js
+* Gilberto Avalos Osuna <avalosagnostic@gmail.com>
+*/
+
 'use strict';
 
 var express = require('express'),
@@ -13,7 +18,7 @@ var express = require('express'),
 app.use(express.static(__dirname + '/public'));
 
 // Library provider
-app.get('/library', function(req, res) {
+app.get('/vr-controller.js', function(req, res) {
   res.setHeader('Content-Type', 'application/javascript');
 
   var script = __dirname + '/client/vr-controller.js';
@@ -21,9 +26,11 @@ app.get('/library', function(req, res) {
   fileStream.pipe(res);
 });
 
-var server = http.createServer(app).listen(8080);
+// Initialize server
+var server = http.createServer(app).listen(3001);
 var sockets = io.listen(server);
 
+// Websocket events
 sockets.on('connection', function(socket) {
 
   socket.on('keydown', function(data) {
