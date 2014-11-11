@@ -33,40 +33,40 @@ To add the plugin to your game, you need to have the vr-controller server up and
 
 Include the plugin to your game:
 
-  ```html
-    <script src="http://<your-local-ip:3001>/vr-controller.js"></script>
-  ```
+```html
+<script src="http://<your-local-ip:3001>/vr-controller.js"></script>
+```
 
 **Create a player**
 
-  ```javascript
-  var playerGeometry = new THREE.BoxGeometry(new THREE.BoxGeometry(1, 1, 0);
-  var playerMaterial = new THREE.MeshLambertMaterial({
-      color: 'white'
-  });
-  var player = new THREE.Mesh(playerGeometry, playerMaterial);
-  ```
+```javascript
+var playerGeometry = new THREE.BoxGeometry(new THREE.BoxGeometry(1, 1, 0);
+var playerMaterial = new THREE.MeshLambertMaterial({
+    color: 'white'
+});
+var player = new THREE.Mesh(playerGeometry, playerMaterial);
+```
 
 **Initialize the plugin:**
 
-  ```javascript
-  vrController = new THREE.VRController({
-      player: player,
-      scene: scene,
-      renderer: renderer,
-      // Replace this with your local ip
-      serverIp: '192.x.x.x'
-  });
-  ```
+```javascript
+vrController = new THREE.VRController({
+    player: player,
+    scene: scene,
+    renderer: renderer,
+    // Replace this with your local ip
+    serverIp: '192.x.x.x'
+});
+```
 
 **Add the `vrController.update` function to your animate/render loop.**
 
-  ```javascript
-  function animate() {
-    vrController.update(scene);
-    requestAnimationFrame(animate);
-  }
-  ```
+```javascript
+function animate() {
+  vrController.update(scene);
+  requestAnimationFrame(animate);
+}
+```
 
 And that't it, open http://localhost:3001/ in your computer to control your mobile/vr game.
 
