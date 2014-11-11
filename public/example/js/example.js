@@ -85,6 +85,7 @@ function init() {
     player: player,
     scene: scene,
     renderer: renderer,
+    // Replace this with your local ip
     serverIp: '192.168.0.100'
   });
 
