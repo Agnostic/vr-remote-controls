@@ -26,7 +26,7 @@ And then, access to (in your computer):
 `http://localhost:3001/`
 
 To try the example included in this project, edit `public/example/js/example.js` and replace the ip with your local ip.
-After that, you can access to `http://<your-local-ip>:3000/examaple/` from your mobile device.
+After that, you can access to `http://<your-local-ip>:3001/examaple/` from your mobile device.
 
 
 Client / Plugin
@@ -57,7 +57,7 @@ vrController = new THREE.VRController({
     player: player,
     scene: scene,
     renderer: renderer,
-    // Replace this with your local ip
+    // Replace this with your local ip (port not necessary)
     serverIp: '192.x.x.x'
 });
 ```
