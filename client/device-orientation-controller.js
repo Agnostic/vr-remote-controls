@@ -11,7 +11,7 @@
  *
 **/
 
-var DeviceOrientationController = function ( object, domElement ) {
+THREE.DeviceOrientationController = function ( object, domElement ) {
   this.object = object;
   this.element = domElement || document;
   this.freeze = true;
@@ -464,4 +464,4 @@ var DeviceOrientationController = function ( object, domElement ) {
 
 };
 
-DeviceOrientationController.prototype = Object.create(THREE.EventDispatcher.prototype);
+THREE.DeviceOrientationController.prototype = Object.create(THREE.EventDispatcher.prototype);

@@ -130,13 +130,13 @@ THREE.FirstPersonControls = function ( object, domElement ) {
 
       if ( this.moveForward || ( this.autoForward && !this.moveBackward ) ) {
         this.object.translateZ( - ( actualMoveSpeed + this.autoSpeedFactor ) );
-        if (checkWallCollision(this.object.position)) {
+        if (this.checkWallCollision(this.object.position)) {
           this.object.translateZ( actualMoveSpeed + this.autoSpeedFactor );
         }
       }
       if ( this.moveBackward ) {
         this.object.translateZ( actualMoveSpeed );
-        if (checkWallCollision(this.object.position)) {
+        if (this.checkWallCollision(this.object.position)) {
           this.object.translateZ( - actualMoveSpeed );
         }
       }
@@ -156,13 +156,13 @@ THREE.FirstPersonControls = function ( object, domElement ) {
       if (!this.noFly) {
         if ( this.moveUp ) {
           this.object.translateY( actualMoveSpeed );
-          if (checkWallCollision(this.object.position)) {
+          if (this.checkWallCollision(this.object.position)) {
             this.object.translateY( - actualMoveSpeed );
           }
         }
         if ( this.moveDown ) {
           this.object.translateY( - actualMoveSpeed );
-          if (checkWallCollision(this.object.position)) {
+          if (this.checkWallCollision(this.object.position)) {
             this.object.translateY( actualMoveSpeed );
           }
         }
