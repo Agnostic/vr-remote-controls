@@ -10,7 +10,8 @@
 
 THREE.VRController = function(options) {
   var self = this,
-    clock = new THREE.Clock();
+    clock = new THREE.Clock(),
+    port = 3001;
 
   self.player = options.player;
   self.moveSpeed = options.moveSpeed || 100;
@@ -33,7 +34,7 @@ THREE.VRController = function(options) {
     self.stereoEffect.separation = 10;
     self.stereoEffect.setSize(window.innerWidth, window.innerHeight);
 
-    self.vrCamera = new DeviceOrientationController(self.camera, options.renderer.domElement);
+    self.vrCamera = new THREE.DeviceOrientationController(self.camera, options.renderer.domElement);
     self.vrCamera.enableManualDrag = false;
     self.vrCamera.enableManualZoom = false;
     self.vrCamera.connect();
@@ -41,7 +42,7 @@ THREE.VRController = function(options) {
     self.player.add(self.camera);
     options.scene.add(self.player);
 
-    var socket = io(options.serverIp + ':3001');
+    var socket = io(options.serverIp + ':' + port);
     socket.on('keydown', self.controls.onKeyDown);
     socket.on('keyup', self.controls.onKeyUp);
 

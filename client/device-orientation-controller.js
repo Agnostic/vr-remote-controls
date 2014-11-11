@@ -11,7 +11,7 @@
  *
 **/
 
-var DeviceOrientationController = function ( object, domElement ) {
+THREE.DeviceOrientationController = function ( object, domElement ) {
   this.object = object;
   this.element = domElement || document;
   this.freeze = true;
