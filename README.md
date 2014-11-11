@@ -33,7 +33,9 @@ To add the plugin to your game, you need to have the vr-controller server up and
 
 Include the plugin to your game:
 
+  ```html
     <script src="http://<your-local-ip:3001>/vr-controller.js"></script>
+  ```
 
 **Create a player**
 
