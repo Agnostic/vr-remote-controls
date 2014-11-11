@@ -43,7 +43,7 @@ To add the plugin to your game, you need to have the vr-controller server up and
 **Create a player**
 
 ```javascript
-var playerGeometry = new THREE.BoxGeometry(new THREE.BoxGeometry(1, 1, 0);
+var playerGeometry = new THREE.BoxGeometry(new THREE.BoxGeometry(1, 1, 0));
 var playerMaterial = new THREE.MeshLambertMaterial({
     color: 'white'
 });
@@ -62,7 +62,7 @@ vrController = new THREE.VRController({
 });
 ```
 
-**Add the `vrController.update` function to your animate/render loop.**
+**Call the `vrController.update` function from your animate/render loop.**
 
 ```javascript
 function animate() {
