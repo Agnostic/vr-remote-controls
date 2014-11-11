@@ -89,7 +89,18 @@ function init() {
     serverIp: '192.168.0.100'
   });
 
+  vrController.controls.checkWallCollision = function(v) {
+    var c = getMapSector(v);
+    return map[c.x][c.z] > 0;
+  };
+
   setupScene();
+}
+
+function getMapSector(v) {
+  var x = Math.floor((v.x + UNITSIZE / 2) / UNITSIZE + mapW/2);
+  var z = Math.floor((v.z + UNITSIZE / 2) / UNITSIZE + mapW/2);
+  return { x: x, z: z };
 }
 
 // Render loop
