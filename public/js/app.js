@@ -52,7 +52,7 @@ window.addEventListener('keydown', function(e) {
     mesh.material.color.setHex('0x' + hexColor);
   }
 
-  socket.emit('keydown', { which: e.which, keyIdentifier: e.keyIdentifier });
+  socket.emit('keydown', { which: e.which, keyCode: e.keyCode, keyIdentifier: e.keyIdentifier });
 }, false);
 
 window.addEventListener('keyup', function(e) {
@@ -74,7 +74,7 @@ window.addEventListener('keyup', function(e) {
     moveY = 0;
   }
 
-  socket.emit('keyup', { which: e.which, keyIdentifier: e.keyIdentifier });
+  socket.emit('keyup', { which: e.which, keyCode: e.keyCode, keyIdentifier: e.keyIdentifier });
 }, false);
 
 // 3d

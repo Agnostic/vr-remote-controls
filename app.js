@@ -20,11 +20,21 @@ app.use(express.static(__dirname + '/public'));
 
 // Library provider
 app.get('/vr-controller.js', function(req, res) {
-  res.setHeader('Content-Type', 'application/javascript');
+  var scripts = '',
+    files = [
+      '/node_modules/socket.io/node_modules/socket.io-client/socket.io.js',
+      '/client/device-orientation-controller.js',
+      '/client/stereo-effect.js',
+      '/client/first-person-controller.js',
+      '/client/vr-controller.js'
+    ];
 
-  var script = __dirname + '/client/vr-controller.js';
-  var fileStream = fs.createReadStream(script);
-  fileStream.pipe(res);
+  files.forEach(function(file) {
+    scripts += fs.readFileSync(__dirname + file);
+  });
+
+  res.setHeader('Content-Type', 'application/javascript');
+  res.end(scripts);
 });
 
 // Initialize server
