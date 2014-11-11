@@ -24,3 +24,53 @@ Then, run the server:
 
 And then, access to:
 http://localhost:3001/
+
+
+Client / Plugin
+-------------
+
+To add the plugin to your game, you need to have the vr-controller server up and running.
+
+Include the plugin to your game:
+
+    <script src="http://<your-local-ip:3001/vr-controller.js"></script>
+
+Create a player
+
+  var playerGeometry = new THREE.BoxGeometry(new THREE.BoxGeometry(1, 1, 0);
+  var playerMaterial = new THREE.MeshLambertMaterial({
+      color: 'white'
+  });
+  var player = new THREE.Mesh(playerGeometry, playerMaterial);
+
+Initialize the plugin:
+
+    vrController = new THREE.VRController({
+      player: player,
+      scene: scene,
+      renderer: renderer,
+      // Replace this with your local ip
+      serverIp: '192.x.x.x'
+  });
+
+Add the `vrController.update` function to your animate/render loop.
+
+    function animate() {
+    vrController.update(scene);
+    requestAnimationFrame(animate);
+  }
+
+And that't it, open http://localhost:3001/ in your computer to control your mobile/vr game.
+
+> **Notes:**
+
+> - If you have a camera, remove/comment it, vr-controller automatically creates a camera for your player and adds the stereo effect to it.
+> - Check http://localhost:3001/example/ to see a working example.
+
+### TODO
+
+  - Add physics (you can add physics to your player manually)
+
+### Support
+
+Feel free to create tickets for issues or suggestions.
