@@ -1,7 +1,7 @@
 vr-remote-controls
 ===================
 
-vr-remote-controls is a collection of THREE.js plugins to create a simple VR controller, and it works in **iOS** and **Android**.
+vr-remote-controls is a collection of THREE.js plugins to create a simple VR controller, and it works on **iOS** and **Android**.
 
 This package includes:
 
@@ -22,8 +22,11 @@ First, you need to install dependences:
 Then, run the server:
 `$ node app`
 
-And then, access to:
-http://localhost:3001/
+And then, access to (in your computer):
+`http://localhost:3001/`
+
+To try the example included in this project, edit `public/example/js/example.js` and replace the ip with your local ip.
+After that, you can access to `http://<your-local-ip>:3000/examaple/` from your mobile device.
 
 
 Client / Plugin
@@ -78,6 +81,7 @@ And that't it, open http://localhost:3001/ in your computer to control your mobi
 ### TODO
 
   - Add physics (you can add physics to your player manually)
+  - Initialize DeviceOrientationController on the same rotation as the player.
 
 ### Support
 
