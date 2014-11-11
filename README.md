@@ -78,6 +78,7 @@ And that't it, open http://localhost:3001/ in your computer to control your mobi
 ### TODO
 
   - Add physics (you can add physics to your player manually)
+  - Initialize DeviceOrientationController on the same rotation as the player.
 
 ### Support
 
