@@ -26,7 +26,7 @@ And then, access to (in your computer):
 `http://localhost:3001/`
 
 To try the example included in this project, edit `public/example/js/example.js` and replace the ip with your local ip.
-After that, you can access to `http://<your-local-ip>:3001/examaple/` from your mobile device.
+After that, you can access to `http://<your-local-ip>:3001/example/` from your mobile device.
 
 
 Client / Plugin
